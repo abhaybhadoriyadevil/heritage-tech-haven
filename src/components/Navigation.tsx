@@ -14,7 +14,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <div className="flex items-center space-x-4">
-            <div className="text-2xl font-bold">
+            <div className="text-xl sm:text-2xl font-bold">
               <span className="font-traditional text-traditional-primary">Heritage</span>
               <span className="font-future text-future-accent mx-1">×</span>
               <span className="font-future text-future-primary">TECH</span>

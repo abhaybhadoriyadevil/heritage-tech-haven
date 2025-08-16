@@ -227,20 +227,7 @@ All colors MUST be HSL.
     box-shadow: 0 0 20px hsl(var(--future-glow) / 0.4);
   }
 
-  /* Split Screen Layout */
-  .split-screen {
-    @apply min-h-screen flex;
-  }
-
-  .split-left {
-    @apply flex-1 bg-gradient-to-br;
-    background: var(--gradient-traditional-bg);
-  }
-
-  .split-right {
-    @apply flex-1;
-    background: var(--gradient-future-bg);
-  }
+  /* Split Screen Layout - Deprecated, using responsive flex layout instead */
 
   /* Animations */
   .animate-float {
