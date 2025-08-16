@@ -134,7 +134,6 @@ All colors MUST be HSL.
   }
 }
 
-}
 
 @layer base {
   * {
@@ -161,26 +160,26 @@ All colors MUST be HSL.
   .traditional-card {
     @apply bg-gradient-to-br from-traditional-bg to-traditional-secondary;
     @apply border border-traditional-border rounded-xl;
-    @apply shadow-[var(--shadow-traditional)];
-    @apply transition-[var(--transition-smooth)];
+    box-shadow: var(--shadow-traditional);
+    transition: var(--transition-smooth);
   }
 
   .traditional-card:hover {
-    @apply shadow-[0_12px_40px_hsl(var(--traditional-accent)_/_0.2)];
-    @apply scale-[1.02];
+    box-shadow: 0 12px 40px hsl(var(--traditional-accent) / 0.2);
+    transform: scale(1.02);
   }
 
   .traditional-button {
     @apply bg-gradient-to-r from-traditional-primary to-traditional-gold;
     @apply text-traditional-secondary font-semibold;
     @apply px-8 py-3 rounded-full;
-    @apply transition-[var(--transition-smooth)];
-    @apply shadow-[var(--shadow-traditional)];
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-traditional);
   }
 
   .traditional-button:hover {
-    @apply shadow-[0_8px_32px_hsl(var(--traditional-gold)_/_0.4)];
-    @apply scale-105;
+    box-shadow: 0 8px 32px hsl(var(--traditional-gold) / 0.4);
+    transform: scale(1.05);
   }
 
   /* Futuristic Theme Components */
@@ -189,13 +188,13 @@ All colors MUST be HSL.
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
     @apply rounded-2xl;
-    @apply shadow-[var(--shadow-future)];
-    @apply transition-[var(--transition-smooth)];
+    box-shadow: var(--shadow-future);
+    transition: var(--transition-smooth);
   }
 
   .future-card:hover {
-    @apply shadow-[var(--shadow-glow)];
-    @apply scale-[1.02];
+    box-shadow: var(--shadow-glow);
+    transform: scale(1.02);
     background: rgba(255, 255, 255, 0.08);
   }
 
@@ -203,13 +202,13 @@ All colors MUST be HSL.
     @apply bg-gradient-to-r from-future-primary to-future-accent;
     @apply text-future-text font-bold;
     @apply px-8 py-3 rounded-full;
-    @apply transition-[var(--transition-smooth)];
-    @apply shadow-[var(--shadow-future)];
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-future);
   }
 
   .future-button:hover {
-    @apply shadow-[var(--shadow-glow)];
-    @apply scale-105;
+    box-shadow: var(--shadow-glow);
+    transform: scale(1.05);
   }
 
   /* Glassmorphism Effect */
