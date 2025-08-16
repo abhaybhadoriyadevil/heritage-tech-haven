@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Dual-Themed E-Commerce Design System
+Traditional Heritage + Futuristic Modern Aesthetics
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* Base System Colors */
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -36,7 +38,45 @@ All colors MUST be HSL.
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
 
-    --radius: 0.5rem;
+    /* Traditional Heritage Theme */
+    --traditional-primary: 18 65% 45%;        /* Rich terracotta */
+    --traditional-secondary: 45 25% 85%;      /* Warm cream */
+    --traditional-accent: 25 60% 35%;         /* Deep brown */
+    --traditional-sage: 95 25% 55%;           /* Sage green */
+    --traditional-gold: 45 85% 65%;           /* Warm gold */
+    --traditional-bg: 35 15% 96%;             /* Soft cream background */
+    --traditional-text: 25 30% 25%;           /* Warm dark brown */
+    --traditional-border: 35 20% 85%;         /* Light brown border */
+
+    /* Futuristic Modern Theme */
+    --future-primary: 240 75% 55%;            /* Electric blue */
+    --future-secondary: 270 60% 45%;          /* Deep purple */
+    --future-accent: 200 100% 70%;            /* Neon cyan */
+    --future-silver: 220 10% 75%;             /* Modern silver */
+    --future-dark: 240 20% 8%;                /* Deep space black */
+    --future-bg: 240 15% 5%;                  /* Dark futuristic bg */
+    --future-text: 220 25% 95%;               /* Light future text */
+    --future-border: 240 30% 15%;             /* Dark border */
+    --future-glow: 200 100% 50%;              /* Neon glow */
+
+    /* Gradients */
+    --gradient-traditional: linear-gradient(135deg, hsl(var(--traditional-primary)), hsl(var(--traditional-gold)));
+    --gradient-future: linear-gradient(135deg, hsl(var(--future-primary)), hsl(var(--future-accent)));
+    --gradient-traditional-bg: linear-gradient(180deg, hsl(var(--traditional-bg)), hsl(var(--traditional-secondary)));
+    --gradient-future-bg: linear-gradient(180deg, hsl(var(--future-bg)), hsl(var(--future-dark)));
+
+    /* Shadows & Effects */
+    --shadow-traditional: 0 8px 32px hsl(var(--traditional-accent) / 0.15);
+    --shadow-future: 0 8px 32px hsl(var(--future-primary) / 0.3);
+    --shadow-glow: 0 0 30px hsl(var(--future-glow) / 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,6 +134,8 @@ All colors MUST be HSL.
   }
 }
 
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -101,5 +143,154 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Traditional Theme Typography */
+  .font-traditional {
+    font-family: 'Playfair Display', 'Georgia', serif;
+  }
+
+  /* Futuristic Theme Typography */
+  .font-future {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+  }
+}
+
+@layer components {
+  /* Traditional Theme Components */
+  .traditional-card {
+    @apply bg-gradient-to-br from-traditional-bg to-traditional-secondary;
+    @apply border border-traditional-border rounded-xl;
+    @apply shadow-[var(--shadow-traditional)];
+    @apply transition-[var(--transition-smooth)];
+  }
+
+  .traditional-card:hover {
+    @apply shadow-[0_12px_40px_hsl(var(--traditional-accent)_/_0.2)];
+    @apply scale-[1.02];
+  }
+
+  .traditional-button {
+    @apply bg-gradient-to-r from-traditional-primary to-traditional-gold;
+    @apply text-traditional-secondary font-semibold;
+    @apply px-8 py-3 rounded-full;
+    @apply transition-[var(--transition-smooth)];
+    @apply shadow-[var(--shadow-traditional)];
+  }
+
+  .traditional-button:hover {
+    @apply shadow-[0_8px_32px_hsl(var(--traditional-gold)_/_0.4)];
+    @apply scale-105;
+  }
+
+  /* Futuristic Theme Components */
+  .future-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    @apply rounded-2xl;
+    @apply shadow-[var(--shadow-future)];
+    @apply transition-[var(--transition-smooth)];
+  }
+
+  .future-card:hover {
+    @apply shadow-[var(--shadow-glow)];
+    @apply scale-[1.02];
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .future-button {
+    @apply bg-gradient-to-r from-future-primary to-future-accent;
+    @apply text-future-text font-bold;
+    @apply px-8 py-3 rounded-full;
+    @apply transition-[var(--transition-smooth)];
+    @apply shadow-[var(--shadow-future)];
+  }
+
+  .future-button:hover {
+    @apply shadow-[var(--shadow-glow)];
+    @apply scale-105;
+  }
+
+  /* Glassmorphism Effect */
+  .glass {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+  }
+
+  /* Glow Effects */
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--future-glow) / 0.6);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px hsl(var(--future-glow) / 0.4);
+  }
+
+  /* Split Screen Layout */
+  .split-screen {
+    @apply min-h-screen flex;
+  }
+
+  .split-left {
+    @apply flex-1 bg-gradient-to-br;
+    background: var(--gradient-traditional-bg);
+  }
+
+  .split-right {
+    @apply flex-1;
+    background: var(--gradient-future-bg);
+  }
+
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer utilities {
+  /* Theme-specific backgrounds */
+  .bg-traditional {
+    background: var(--gradient-traditional-bg);
+  }
+
+  .bg-future {
+    background: var(--gradient-future-bg);
+  }
+
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes glow {
+    from { box-shadow: 0 0 20px hsl(var(--future-glow) / 0.4); }
+    to { box-shadow: 0 0 30px hsl(var(--future-glow) / 0.8); }
+  }
+
+  @keyframes slideUp {
+    from { 
+      opacity: 0; 
+      transform: translateY(30px);
+    }
+    to { 
+      opacity: 1; 
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive utilities */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 }

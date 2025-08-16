@@ -61,7 +61,40 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Traditional Theme Colors
+				traditional: {
+					primary: 'hsl(var(--traditional-primary))',
+					secondary: 'hsl(var(--traditional-secondary))',
+					accent: 'hsl(var(--traditional-accent))',
+					sage: 'hsl(var(--traditional-sage))',
+					gold: 'hsl(var(--traditional-gold))',
+					bg: 'hsl(var(--traditional-bg))',
+					text: 'hsl(var(--traditional-text))',
+					border: 'hsl(var(--traditional-border))',
+				},
+				// Futuristic Theme Colors
+				future: {
+					primary: 'hsl(var(--future-primary))',
+					secondary: 'hsl(var(--future-secondary))',
+					accent: 'hsl(var(--future-accent))',
+					silver: 'hsl(var(--future-silver))',
+					dark: 'hsl(var(--future-dark))',
+					bg: 'hsl(var(--future-bg))',
+					text: 'hsl(var(--future-text))',
+					border: 'hsl(var(--future-border))',
+					glow: 'hsl(var(--future-glow))',
 				}
+			},
+			fontFamily: {
+				traditional: ['Playfair Display', 'Georgia', 'serif'],
+				future: ['Inter', 'Segoe UI', 'sans-serif'],
+			},
+			backgroundImage: {
+				'gradient-traditional': 'var(--gradient-traditional)',
+				'gradient-future': 'var(--gradient-future)',
+				'gradient-traditional-bg': 'var(--gradient-traditional-bg)',
+				'gradient-future-bg': 'var(--gradient-future-bg)',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
