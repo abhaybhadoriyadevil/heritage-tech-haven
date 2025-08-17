@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button-variants"
-import { Star, Heart, ShoppingCart } from "lucide-react"
+import { Star, Heart, ShoppingCart, Sparkles, Zap } from "lucide-react"
 
 const FeaturedProducts = () => {
   const traditionalProducts = [
@@ -140,10 +140,14 @@ const FeaturedProducts = () => {
         <div className="h-px bg-gradient-to-r from-traditional-primary via-gray-300 to-future-primary mb-12 sm:mb-16 md:mb-20" />
 
         {/* Futuristic Products Section */}
-        <div className="bg-future-bg/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12">
+        <div className="bg-future-bg/50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 backdrop-blur-sm border border-future-accent/20">
           <div className="text-center mb-8 sm:mb-10 md:mb-12">
-            <h2 className="font-future text-2xl sm:text-3xl md:text-4xl font-bold text-future-text mb-3 sm:mb-4 glow-text uppercase tracking-wider">
-              Future Tech
+            <div className="inline-flex items-center space-x-2 bg-future-primary/20 backdrop-blur-sm border border-future-accent/30 rounded-full px-6 py-3 text-future-accent font-future mb-6">
+              <Zap className="w-5 h-5" />
+              <span>Future Technology</span>
+            </div>
+            <h2 className="font-future text-2xl sm:text-3xl md:text-4xl font-black text-future-text mb-3 sm:mb-4 glow-text uppercase tracking-wider">
+              FUTURE TECH
             </h2>
             <p className="font-future text-base sm:text-lg text-future-silver max-w-2xl mx-auto px-4">
               Cutting-edge technology that pushes the boundaries of innovation and redefines the future.
@@ -155,7 +159,8 @@ const FeaturedProducts = () => {
             ))}
           </div>
           <div className="text-center mt-8 sm:mt-10 md:mt-12">
-            <Button variant="future" size="xl" className="w-full sm:w-auto">
+            <Button variant="future" size="lg" className="w-full sm:w-auto font-future">
+              <Sparkles className="mr-2" />
               Explore Future Tech
             </Button>
           </div>
