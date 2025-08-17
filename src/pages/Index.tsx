@@ -1,16 +1,11 @@
-import Navigation from "@/components/Navigation"
-import DualThemeHero from "@/components/DualThemeHero"
-import FeaturedProducts from "@/components/FeaturedProducts"
+import { DashboardLayout } from "@/components/Layout/DashboardLayout";
+import { DashboardHome } from "@/components/Dashboard/DashboardHome";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Navigation />
-      <main>
-        <DualThemeHero />
-        <FeaturedProducts />
-      </main>
-    </div>
+    <DashboardLayout>
+      <DashboardHome />
+    </DashboardLayout>
   )
 }
 
